@@ -7,11 +7,11 @@ class Skpr < Formula
 
   if OS.mac?
     url "https://github.com/skpr/cli/releases/download/v0.9.0/skpr_0.9.0_macOS_amd64.tar.gz"
-    sha256 "23c4221ab1583f3ac195155d2bff63a068b7e4cc1ffef87a9cbedd191ac45203"
+    sha256 "a6a917ebefdb552cd5cfa2cfba990389210bc7fdeeacc57c9879ca63db35ef9f"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/skpr/cli/releases/download/v0.9.0/skpr_0.9.0_linux_amd64.tar.gz"
-      sha256 "46d34fb202dab2ab5a950e6765fccb5437b64c0df4efa365e9f832a8e87dd7d3"
+      sha256 "6fc2a9d7d6c7f7532cf3772e0f3d6cb499cdc99131b7d680bbca6f8bfc1216db"
     end
   end
   
