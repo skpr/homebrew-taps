@@ -2,16 +2,16 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.9.0"
+  version "0.9.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/skpr/cli/releases/download/v0.9.0/skpr_0.9.0_macOS_amd64.tar.gz"
-    sha256 "edded592be46af4a3ca4c2b502be9759fca0c6a195c0b51998058f144c7d0046"
+    url "https://github.com/skpr/cli/releases/download/v0.9.1/skpr_0.9.1_macOS_amd64.tar.gz"
+    sha256 "478a6bbb20c72396c06893fe6af899b0ba68eac278b7ecd71413244aae6d7ef4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.9.0/skpr_0.9.0_linux_amd64.tar.gz"
-      sha256 "aeb665d331972b5d5f6a0af148e57360bbbe30bf39e84400bd3de2d182ef5545"
+      url "https://github.com/skpr/cli/releases/download/v0.9.1/skpr_0.9.1_linux_amd64.tar.gz"
+      sha256 "9d19d3cd25d9b1fd1d5f441cce724a9e26b63d9f98e910df4178b524aa66d305"
     end
   end
   
@@ -21,6 +21,8 @@ class Skpr < Formula
   def install
     bin.install "skpr"
     bin.install "skpr-rsh"
+    
+    man1.install "share/man/man1/skpr.1"
     
     # Install bash completion
     output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
