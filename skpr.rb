@@ -2,16 +2,16 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.9.3-rc4"
+  version "0.9.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/skpr/cli/releases/download/v0.9.3-rc4/skpr_0.9.3-rc4_macOS_amd64.tar.gz"
-    sha256 "05e68b777cd9c284423dea87d73754190a1be78f55635e3c9d7ba4df92166fb0"
+    url "https://github.com/skpr/cli/releases/download/v0.9.3/skpr_0.9.3_macOS_amd64.tar.gz"
+    sha256 "d1bc0fda2aa1a7b84f95881f51b16fa30b7c0ef7a69aa5df44a947b7d2aed09d"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.9.3-rc4/skpr_0.9.3-rc4_linux_amd64.tar.gz"
-      sha256 "a8dd15530a5ed35ca44a2779adb495b552fac99fb9e6b62af241453ed64cc4b0"
+      url "https://github.com/skpr/cli/releases/download/v0.9.3/skpr_0.9.3_linux_amd64.tar.gz"
+      sha256 "7f191cc69b9c0a4a076d0c4fab471d32952435dfbc2756c48a049a32cc2d44e8"
     end
   end
   
