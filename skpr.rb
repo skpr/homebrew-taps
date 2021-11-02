@@ -6,7 +6,6 @@ class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
   version "0.14.1"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
