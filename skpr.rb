@@ -5,12 +5,12 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.17.0"
+  version "0.18.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.17.0/skpr_0.17.0_macOS_arm64.tar.gz"
-      sha256 "d29a0494f37dfdedca4617132c1d0cee0ca688b0459b31ef07cb9baf7bebf209"
+      url "https://github.com/skpr/cli/releases/download/v0.18.0/skpr_0.18.0_macOS_arm64.tar.gz"
+      sha256 "dc24b369004dab52628e262fe3a5e4cc7b69b4d701d010d453f84d94ad2f0598"
 
       def install
         bin.install "skpr"
@@ -28,8 +28,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.17.0/skpr_0.17.0_macOS_amd64.tar.gz"
-      sha256 "fdba397f81e66bc19508ce0603199420d2994449c88791a77a7264ef0353eb28"
+      url "https://github.com/skpr/cli/releases/download/v0.18.0/skpr_0.18.0_macOS_amd64.tar.gz"
+      sha256 "aacdede02eb1aad601e23344e7689cc3911b756e8a000a2915c16c12605f7f71"
 
       def install
         bin.install "skpr"
@@ -50,8 +50,8 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.17.0/skpr_0.17.0_linux_arm64.tar.gz"
-      sha256 "dc83a4c91562f926599654d548393ee4cb68f34495c66ee11edb25dce7456a73"
+      url "https://github.com/skpr/cli/releases/download/v0.18.0/skpr_0.18.0_linux_arm64.tar.gz"
+      sha256 "095b3b09b6f3515efd8448f121b8089e0bc0eb853efa5358a19eed77a16c3f0c"
 
       def install
         bin.install "skpr"
@@ -69,8 +69,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.17.0/skpr_0.17.0_linux_amd64.tar.gz"
-      sha256 "d4a694a5af280d05c1f5937cb7cd4a8c20df879cb64241369432cacd5abd4d5b"
+      url "https://github.com/skpr/cli/releases/download/v0.18.0/skpr_0.18.0_linux_amd64.tar.gz"
+      sha256 "83d11ce447732e199eb2c961b8f84391429b7a176b7325f5218d1ffdeb5763eb"
 
       def install
         bin.install "skpr"
