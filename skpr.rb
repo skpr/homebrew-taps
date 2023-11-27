@@ -5,15 +5,15 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.24.1"
+  version "0.25.0"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.24.1/skpr_0.24.1_macOS_amd64.tar.gz"
-      sha256 "f35e55a06b0ca39a6057469f399acf26b2923c2ecabdf4efef98997bb5993b64"
+      url "https://github.com/skpr/cli/releases/download/v0.25.0/skpr_0.25.0_macOS_amd64.tar.gz"
+      sha256 "179e27a36378932e879e97c3bfc268c9df858f9dcc8a20485d953a0491680b7a"
 
       def install
         bin.install "skpr"
@@ -31,8 +31,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.24.1/skpr_0.24.1_macOS_arm64.tar.gz"
-      sha256 "649ba0a4a2630e5f9b96016a8d51b95e140b6ebc9a80876541df3e8cc509ff26"
+      url "https://github.com/skpr/cli/releases/download/v0.25.0/skpr_0.25.0_macOS_arm64.tar.gz"
+      sha256 "c186f9c8b9d2d3ed3951bd9fda532b91ae300f9af85c496f5a552a2ae1be61f9"
 
       def install
         bin.install "skpr"
@@ -53,8 +53,8 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.24.1/skpr_0.24.1_linux_arm64.tar.gz"
-      sha256 "20abafdef6f64cb1e070327ca63920e69b69ce36ad5347fe4dd8b7af2c404b86"
+      url "https://github.com/skpr/cli/releases/download/v0.25.0/skpr_0.25.0_linux_arm64.tar.gz"
+      sha256 "dc319f5205552d2bf0801ffdb25c070c4ce7d56cf1933ed05e5179b719ec7ca4"
 
       def install
         bin.install "skpr"
@@ -72,8 +72,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.24.1/skpr_0.24.1_linux_amd64.tar.gz"
-      sha256 "cee075ec6980f6dc0d3cc241b562a6c6b05c257b6cb26e7e2aeb87ed07a88733"
+      url "https://github.com/skpr/cli/releases/download/v0.25.0/skpr_0.25.0_linux_amd64.tar.gz"
+      sha256 "ed2344c38929183d0f3ab90d5a1deef414ad041c9da30d088edb1d94cd5849f2"
 
       def install
         bin.install "skpr"
