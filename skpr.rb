@@ -5,15 +5,15 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.26.2"
+  version "0.26.3"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.26.2/skpr_0.26.2_macOS_arm64.tar.gz"
-      sha256 "15835d39f62e5f2fc8f399de875c5fd0d36e1fb220c27fd317d9b7dc04d22a7b"
+      url "https://github.com/skpr/cli/releases/download/v0.26.3/skpr_0.26.3_macOS_arm64.tar.gz"
+      sha256 "7869c97d58536704a5274bfcb56a2f72036ae5bd0599b218424a28c3946d64a3"
 
       def install
         bin.install "skpr"
@@ -31,8 +31,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.26.2/skpr_0.26.2_macOS_amd64.tar.gz"
-      sha256 "238e8e58129fea162ffad228be0107cdb85f3e2910a82dbb5e7b36173254303c"
+      url "https://github.com/skpr/cli/releases/download/v0.26.3/skpr_0.26.3_macOS_amd64.tar.gz"
+      sha256 "7ab46ab783e66cc265ace718f453e0470c732cc96eb6ce664cb1ac9c761afc9f"
 
       def install
         bin.install "skpr"
@@ -52,9 +52,9 @@ class Skpr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.26.2/skpr_0.26.2_linux_arm64.tar.gz"
-      sha256 "20a99c67378349bd0f43580ede3a23de6a4c586d8d4c38da77b770778360eec2"
+    if Hardware::CPU.intel?
+      url "https://github.com/skpr/cli/releases/download/v0.26.3/skpr_0.26.3_linux_amd64.tar.gz"
+      sha256 "a0a79555cb768a7fa98d6355f6122ad6988055db00d09c9ea43a92bd1bcbe4fd"
 
       def install
         bin.install "skpr"
@@ -71,9 +71,9 @@ class Skpr < Formula
         (zsh_completion/"_skpr").write output
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.26.2/skpr_0.26.2_linux_amd64.tar.gz"
-      sha256 "519a3ae75a8ad4558f94b2d49078eff3d6abc7a382b5a26af3351058573764a0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skpr/cli/releases/download/v0.26.3/skpr_0.26.3_linux_arm64.tar.gz"
+      sha256 "96bf7290b22608806e22fe9016bc3e7ca23c5bd8ae06c7f7d7b6b324c0c9b54f"
 
       def install
         bin.install "skpr"
