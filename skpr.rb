@@ -5,15 +5,15 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.33.1"
+  version "0.34.0"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.33.1/skpr_0.33.1_macOS_amd64.tar.gz"
-      sha256 "1c77d451614768275aa8eb423af1991663133fa4ee853a60e648d8b090ab9be0"
+      url "https://github.com/skpr/cli/releases/download/v0.34.0/skpr_0.34.0_macOS_amd64.tar.gz"
+      sha256 "b2bf7198ec880371c9929cf493a4f90d55fea34f52e191893f89fec22ee96dc3"
 
       def install
         bin.install "skpr"
@@ -31,8 +31,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.33.1/skpr_0.33.1_macOS_arm64.tar.gz"
-      sha256 "002bea1bd21be9aca07e6f9fee064e6e054baf10403af14bf6fbddaa52b1983c"
+      url "https://github.com/skpr/cli/releases/download/v0.34.0/skpr_0.34.0_macOS_arm64.tar.gz"
+      sha256 "b44357355ed8ae2dcde8d864c0dec7b349c00d9286eb766765a9af84389a322e"
 
       def install
         bin.install "skpr"
@@ -52,46 +52,40 @@ class Skpr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/skpr/cli/releases/download/v0.33.1/skpr_0.33.1_linux_amd64.tar.gz"
-        sha256 "26bbe38d2b2a01a5e364016e0a1b3a33540eb72ec24b2c97c49a5119f6a4315b"
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/skpr/cli/releases/download/v0.34.0/skpr_0.34.0_linux_amd64.tar.gz"
+      sha256 "940096d910ad77c9c6455b12d1b7825f476a7e1440facb608b3e56e617c140b8"
+      def install
+        bin.install "skpr"
+        bin.install "skpr-rsh"
 
-        def install
-          bin.install "skpr"
-          bin.install "skpr-rsh"
+        man1.install "share/man/man1/skpr.1"
 
-          man1.install "share/man/man1/skpr.1"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        (bash_completion/"skpr").write output
 
-          # Install bash completion
-          output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
-          (bash_completion/"skpr").write output
-
-          # Install zsh completion
-          output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
-          (zsh_completion/"_skpr").write output
-        end
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        (zsh_completion/"_skpr").write output
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/skpr/cli/releases/download/v0.33.1/skpr_0.33.1_linux_arm64.tar.gz"
-        sha256 "28bf4eeb3647006a976af5f37fc8722f1eed669a0f3864a1aae7249b61eab6b9"
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/skpr/cli/releases/download/v0.34.0/skpr_0.34.0_linux_arm64.tar.gz"
+      sha256 "5d7c00b61163ff60b1ad7b3246e1f8c394f413c8e05737d78ab936ff3c9d8c6f"
+      def install
+        bin.install "skpr"
+        bin.install "skpr-rsh"
 
-        def install
-          bin.install "skpr"
-          bin.install "skpr-rsh"
+        man1.install "share/man/man1/skpr.1"
 
-          man1.install "share/man/man1/skpr.1"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        (bash_completion/"skpr").write output
 
-          # Install bash completion
-          output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
-          (bash_completion/"skpr").write output
-
-          # Install zsh completion
-          output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
-          (zsh_completion/"_skpr").write output
-        end
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        (zsh_completion/"_skpr").write output
       end
     end
   end
