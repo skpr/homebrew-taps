@@ -5,15 +5,15 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.34.5"
+  version "0.34.6"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.34.5/skpr_0.34.5_macOS_amd64.tar.gz"
-      sha256 "fe6c67ad42b4546f20e625c99f55d2a189c9df580b80d0eb1cd753761613bc2b"
+      url "https://github.com/skpr/cli/releases/download/v0.34.6/skpr_0.34.6_macOS_amd64.tar.gz"
+      sha256 "d0dd8b7cfcca90ce0ab6eedb25e539a04dd37ee7d5aa5cefdf3c852d0e1711d0"
 
       def install
         bin.install "skpr"
@@ -31,8 +31,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.34.5/skpr_0.34.5_macOS_arm64.tar.gz"
-      sha256 "ef2d3e999b5ec75dc14d0e26f1d06e59e1c13dea6ca9057b9bf841181dd2cdda"
+      url "https://github.com/skpr/cli/releases/download/v0.34.6/skpr_0.34.6_macOS_arm64.tar.gz"
+      sha256 "5a0e04e90714e31a6282043da91e89a96c6db3eeaf1f149d3caa0a42e9b32a9f"
 
       def install
         bin.install "skpr"
@@ -53,8 +53,8 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.34.5/skpr_0.34.5_linux_amd64.tar.gz"
-      sha256 "1fb67b1e867d1ac2d9394e8693e072708b1c7782737a7e57d93a43f6f3b5f617"
+      url "https://github.com/skpr/cli/releases/download/v0.34.6/skpr_0.34.6_linux_amd64.tar.gz"
+      sha256 "d040bcf655702ae328c5d09557cc99921f2df4496f371b32f2b2754454464c25"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
@@ -71,8 +71,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.34.5/skpr_0.34.5_linux_arm64.tar.gz"
-      sha256 "fa12f375b568c471a6ec0f29cd626cd41b4ad7f271a2e0d6e44e48e1d216fdba"
+      url "https://github.com/skpr/cli/releases/download/v0.34.6/skpr_0.34.6_linux_arm64.tar.gz"
+      sha256 "e73911698a0b84c6be4fac8db0b9d0dca191cbbbfa4d7867d0ddb984c561044a"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
