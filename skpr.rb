@@ -5,21 +5,19 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "0.34.8"
+  version "1.0.0"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v0.34.8/skpr_0.34.8_macOS_amd64.tar.gz"
-      sha256 "9c7c63274aa4441cd9214aead406eb2e73d474a9da2292d4e9d7161767b3d1a4"
+      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_macOS_amd64.tar.gz"
+      sha256 "fe98b50d0ddb3689c83a3b0cd409bb0cbd47e2871dd7d0da57a3c52d318621eb"
 
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
-
-        man1.install "share/man/man1/skpr.1"
 
         # Install bash completion
         output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
@@ -31,14 +29,12 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v0.34.8/skpr_0.34.8_macOS_arm64.tar.gz"
-      sha256 "406488e2936c616da966fe538c48c749aa1c8c2a7683740081b45d2f32989a7b"
+      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_macOS_arm64.tar.gz"
+      sha256 "a67a0fba1c81cd8d90d284422c7bdd222e4cd92ae127bd43a4623a8d91c359b5"
 
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
-
-        man1.install "share/man/man1/skpr.1"
 
         # Install bash completion
         output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
@@ -52,14 +48,12 @@ class Skpr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.34.8/skpr_0.34.8_linux_amd64.tar.gz"
-      sha256 "dafdd149b4ea30784fac3489fcb4dc6ccf92f0536e12b8be06ca0cc5e5b20297"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_linux_amd64.tar.gz"
+      sha256 "12d16f3a034d1400e226939cd651332ff831d9582132dbe9c0e25bd6f4cc21ed"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
-
-        man1.install "share/man/man1/skpr.1"
 
         # Install bash completion
         output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
@@ -70,14 +64,12 @@ class Skpr < Formula
         (zsh_completion/"_skpr").write output
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v0.34.8/skpr_0.34.8_linux_arm64.tar.gz"
-      sha256 "9cc27503a4892453df9ccb3bf72a73c3d66f2d142895455852bab429e7c69292"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_linux_arm64.tar.gz"
+      sha256 "859ccd3546df9f0868256a42f02fce8cc6db30e4fb65909cfe579bfe84107b9d"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
-
-        man1.install "share/man/man1/skpr.1"
 
         # Install bash completion
         output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
