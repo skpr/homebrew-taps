@@ -5,43 +5,43 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "1.0.0"
+  version "1.0.1"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_macOS_amd64.tar.gz"
-      sha256 "3959eea295fc31d8e743a8c0cc2d036efb8557a16e495886220f7d2cf9d9bdb5"
+      url "https://github.com/skpr/cli/releases/download/v1.0.1/skpr_1.0.1_macOS_amd64.tar.gz"
+      sha256 "b20bc9fa1df1ce1b28532cd3f8f74f9c51d642c00c80547146babe124c2b9d1e"
 
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
 
         # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "bash")
         (bash_completion/"skpr").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "zsh")
         (zsh_completion/"_skpr").write output
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_macOS_arm64.tar.gz"
-      sha256 "1c2cddef3f4c2ad26091e580dacb67a6806c3bb3a500b1436883c858bf1d5650"
+      url "https://github.com/skpr/cli/releases/download/v1.0.1/skpr_1.0.1_macOS_arm64.tar.gz"
+      sha256 "b183769ef18473bf1e67e668c1c8bb39b05218176583d0bc010073e28e3fe01b"
 
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
 
         # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "bash")
         (bash_completion/"skpr").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "zsh")
         (zsh_completion/"_skpr").write output
       end
     end
@@ -49,34 +49,34 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_linux_amd64.tar.gz"
-      sha256 "5f8b56c87925777dc2ff188710cadc6b699ea6e09ef2934d84e5bbbf16cae144"
+      url "https://github.com/skpr/cli/releases/download/v1.0.1/skpr_1.0.1_linux_amd64.tar.gz"
+      sha256 "c671b88daa99aa9c5c0afb3f500a1473880e6cbfa22ab08c88361bb26fd2eac6"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
 
         # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "bash")
         (bash_completion/"skpr").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "zsh")
         (zsh_completion/"_skpr").write output
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.0.0/skpr_1.0.0_linux_arm64.tar.gz"
-      sha256 "4cb550868aa064c3235a367bc7a2da6218c44819be5024878bd6ebd0340bb522"
+      url "https://github.com/skpr/cli/releases/download/v1.0.1/skpr_1.0.1_linux_arm64.tar.gz"
+      sha256 "cbeab606707f4f386bdc1e1fce93ecaad0551a98068a7b1a61cc5227277a8df1"
       def install
         bin.install "skpr"
         bin.install "skpr-rsh"
 
         # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-bash")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "bash")
         (bash_completion/"skpr").write output
 
         # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/skpr", "--completion-script-zsh")
+        output = Utils.safe_popen_read("#{bin}/skpr", "completion", "zsh")
         (zsh_completion/"_skpr").write output
       end
     end
