@@ -5,18 +5,19 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "1.7.0"
+  version "1.8.1"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v1.7.0/skpr_1.7.0_macOS_amd64.tar.gz"
-      sha256 "7b1753fcc86d7f626cade0040b4ad87cf8a8341cddeb0185362f70c32a42c56e"
+      url "https://github.com/skpr/cli/releases/download/v1.8.1/skpr_1.8.1_macOS_amd64.tar.gz"
+      sha256 "fba5229b753db4767dd1413e00b4e4053598b9603fd82f4ea9eb2f6e8d519237"
 
       def install
         bin.install "skpr"
+        bin.install "skpr-agent"
         bin.install "skpr-rsh"
 
         # Install bash completion
@@ -29,11 +30,12 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v1.7.0/skpr_1.7.0_macOS_arm64.tar.gz"
-      sha256 "1bd526cc728d3a3f7caccc2069dcdd9382d4cdf3a9e278a3be9ce82e31278757"
+      url "https://github.com/skpr/cli/releases/download/v1.8.1/skpr_1.8.1_macOS_arm64.tar.gz"
+      sha256 "e9636fd5e362df115c06dbcd3e49847210fc571810724e9014e9b8e7c38847cf"
 
       def install
         bin.install "skpr"
+        bin.install "skpr-agent"
         bin.install "skpr-rsh"
 
         # Install bash completion
@@ -49,10 +51,11 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.7.0/skpr_1.7.0_linux_amd64.tar.gz"
-      sha256 "02cda8f020b17f238cbb5cf8b580d96456b19939e5a25a2ae740250b06e33701"
+      url "https://github.com/skpr/cli/releases/download/v1.8.1/skpr_1.8.1_linux_amd64.tar.gz"
+      sha256 "f0ee775e7e2aef1bc9a0547e3051771f6f85194a8e96449edd1686876e5aa4ac"
       def install
         bin.install "skpr"
+        bin.install "skpr-agent"
         bin.install "skpr-rsh"
 
         # Install bash completion
@@ -65,10 +68,11 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.7.0/skpr_1.7.0_linux_arm64.tar.gz"
-      sha256 "a09b5d6ae895c57cc12158841f200918e8a49e5a287cd73f9a0e8a3456010c9a"
+      url "https://github.com/skpr/cli/releases/download/v1.8.1/skpr_1.8.1_linux_arm64.tar.gz"
+      sha256 "97bc96ddd4728c7ce67f6654766924e2002668185350686f390781738a54227c"
       def install
         bin.install "skpr"
+        bin.install "skpr-agent"
         bin.install "skpr-rsh"
 
         # Install bash completion
