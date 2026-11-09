@@ -5,15 +5,15 @@
 class Skpr < Formula
   desc "CLI for the Skpr Hosting Platform"
   homepage "https://www.skpr.io"
-  version "1.10.1"
+  version "1.10.2"
 
   depends_on "docker" => :optional
   depends_on "rsync" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skpr/cli/releases/download/v1.10.1/skpr_1.10.1_macOS_amd64.tar.gz"
-      sha256 "bd2db0f21d20ce0aea22bd30fe5bde9a33a2f865f8ca9f966acb6eb0e44d0694"
+      url "https://github.com/skpr/cli/releases/download/v1.10.2/skpr_1.10.2_macOS_amd64.tar.gz"
+      sha256 "eb858ce069132d31d8a4a72b0deb4506c3b9e3b7b8dc0f9b77ac9fddaae44409"
 
       def install
         bin.install "skpr"
@@ -30,8 +30,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skpr/cli/releases/download/v1.10.1/skpr_1.10.1_macOS_arm64.tar.gz"
-      sha256 "469112b2bd6decbc7557a56414cc74e0164f36fb07dd6273e5c6db6f2cdca16a"
+      url "https://github.com/skpr/cli/releases/download/v1.10.2/skpr_1.10.2_macOS_arm64.tar.gz"
+      sha256 "f5cc4bbc26f69ba4507bd49df2bfa571027f71cc4a2b5a5b9aa16ddb7d8b83eb"
 
       def install
         bin.install "skpr"
@@ -51,8 +51,8 @@ class Skpr < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.10.1/skpr_1.10.1_linux_amd64.tar.gz"
-      sha256 "00351ad51fcc8ea5558f03ce5e02eed4489a79977f6bb7e373a28c840fd44221"
+      url "https://github.com/skpr/cli/releases/download/v1.10.2/skpr_1.10.2_linux_amd64.tar.gz"
+      sha256 "06426b95f50761310c815729b2ceab1e0ea4029a6bbcae6dc2a8fb2242f4bbb9"
       def install
         bin.install "skpr"
         bin.install "skpr-agent"
@@ -68,8 +68,8 @@ class Skpr < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skpr/cli/releases/download/v1.10.1/skpr_1.10.1_linux_arm64.tar.gz"
-      sha256 "2183771e22230be7a4e4f0353c01836613b25c85e58573c0ed7206835a19e728"
+      url "https://github.com/skpr/cli/releases/download/v1.10.2/skpr_1.10.2_linux_arm64.tar.gz"
+      sha256 "1cd38aa6bb7ad3ee222624f45095c6fc7284a7271df002bf4cd101e4eea4bd6e"
       def install
         bin.install "skpr"
         bin.install "skpr-agent"
